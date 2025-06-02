@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Video responsiveness */
+.responsive-video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+
+.responsive-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Typography styling */
+.custom-prose h1,
+.custom-prose h2 {
+  @apply text-left text-lg mt-8 mb-4 font-bold;
+}
+
+
+.custom-prose h3,
+.custom-prose h4 {
+  @apply font-semibold text-base;
+}
+
+.custom-prose p {
+  @apply mb-6 leading-relaxed;
+}
+
+.custom-prose ol {
+  @apply list-decimal pl-6 mb-6;
+}
+
+.custom-prose li {
+  @apply mb-4;
+}
+
+.custom-prose blockquote p {
+  @apply text-black;
+}
+
+.custom-prose strong {
+  @apply text-gray-900;
+}
+
+/* Inline code */
+.custom-prose code {
+  @apply p-1 text-sm bg-gray-100 text-gray-700 rounded-md italic break-words;
+}
+
+/* Block code (PRE blocks) */
+/* LIGHT MODE */
+.custom-prose pre {
+  @apply bg-gray-100 text-left text-sm text-gray-800 p-4 rounded-md font-mono whitespace-pre overflow-x-auto;
+}
+
+/* Mobile optimization */
+@media screen and (max-width: 640px) {
+  .custom-prose pre {
+    @apply text-xs;
+  }
+}
+
+/* === DARK MODE OVERRIDES === */
+body.dark-mode .custom-prose p,
+body.dark-mode .custom-prose ul,
+body.dark-mode .custom-prose li,
+body.dark-mode .custom-prose li span,
+body.dark-mode .custom-prose p span {
+  @apply text-zinc-300 !important;
+}
+
+body.dark-mode .custom-prose strong {
+  @apply text-white !important;
+}
+
+body.dark-mode .custom-prose div strong {
+  @apply text-black !important;
+}
+
+body.dark-mode .custom-prose h3 {
+  @apply text-white !important;
+}
+
+/* DARK MODE */
+body.dark-mode .custom-prose pre {
+  @apply bg-zinc-800 text-left text-sm text-gray-100 p-4 rounded-md font-mono whitespace-pre overflow-x-auto;
+}
+
+body.dark-mode .custom-prose p code {
+  @apply bg-zinc-700 text-gray-300 p-1 rounded-md italic;
+}
+
+/* Fix white background inline styles from pasted content */
+body.dark-mode .custom-prose span[style*="background-color:white"] {
+  @apply text-gray-800 !important;
+}
+
+body.dark-mode .custom-prose span[style*="background-color:white"][style*="color:#273239"] strong,
+body.dark-mode .custom-prose span[style*="background-color:rgb(255,255,255)"][style*="color:rgb(102,102,102)"],
+body.dark-mode .custom-prose span[style*="background-color:white"][style*="color:#0A0A23"] strong {
+  @apply text-gray-800 font-semibold !important;
+}
+
+body.dark-mode .custom-prose blockquote p {
+  @apply text-white !important;
+}

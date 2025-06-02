@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/sitemap.xml",
+        "destination": "https://vknan.pythonanywhere.com/sitemap.xml"
+      }
+    ]
+  }
+  
